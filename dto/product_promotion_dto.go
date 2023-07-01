@@ -1,0 +1,4 @@
+package dto
+
+const NOMINAL_PROMOTION_ID = 1
+const PERCENTAGE_PROMOTION_ID = 2

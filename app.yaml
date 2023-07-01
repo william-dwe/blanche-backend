@@ -1,0 +1,5 @@
+runtime: go119
+service: backend
+
+vpc_access_connector:
+ name: projects/blanche-commerce/locations/asia-southeast1/connectors/blanche-redis-vpc

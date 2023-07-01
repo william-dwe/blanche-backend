@@ -1,0 +1,81 @@
+package domain
+
+import "git-garena.com/sea-labs-id/batch-04/stage-02/blanche/blanche-be/httperror"
+
+var ErrGetRoleInvalidInput = httperror.BadRequestError("role  is required and must be correct", "DATA_NOT_VALID")
+var ErrGetRoleInternalError = httperror.InternalServerError("cannot get role")
+
+var ErrCheckEmailInvalidInput = httperror.BadRequestError("email is required and must be correct", "DATA_NOT_VALID")
+var ErrCheckEmailExistence = httperror.InternalServerError("cannot check user email existence")
+var ErrGetUserInternalError = httperror.InternalServerError("cannot get user")
+var ErrUserEmailAlreadyExist = httperror.BadRequestError("email already exists", "DATA_NOT_VALID")
+
+var ErrCheckUsernameInvalidInput = httperror.BadRequestError("username is required and must be correct", "DATA_NOT_VALID")
+var ErrCheckUsernameExistence = httperror.InternalServerError("cannot check user username existence")
+var ErrUsernameAlreadyExist = httperror.BadRequestError("username already exists", "DATA_NOT_VALID")
+
+var ErrGetUserNotFound = httperror.BadRequestError("cannot get user, username not found", "DATA_NOT_VALID")
+var ErrGetUser = httperror.InternalServerError("cannot get user")
+
+var ErrInvalidEmailFormat = httperror.BadRequestError("email format is not valid", "DATA_NOT_VALID")
+var ErrInvalidPasswordLength = httperror.BadRequestError("password length must be between 8 and 32", "DATA_NOT_VALID")
+var ErrInvalidPasswordContainUsername = httperror.BadRequestError("password cannot contain username", "DATA_NOT_VALID")
+var ErrInvalidPasswordContainLeadingOrTrailingSpaces = httperror.BadRequestError("password cannot contain leading or trailing spaces", "DATA_NOT_VALID")
+var ErrInvalidFullnameLength = httperror.BadRequestError("fullname length must be between 2 and 32", "DATA_NOT_VALID")
+var ErrInvalidUsernameLength = httperror.BadRequestError("username length must be between 8 and 16", "DATA_NOT_VALID")
+var ErrRegisterInvalidInput = httperror.BadRequestError("email, password, and name are required and must be correct", "DATA_NOT_VALID")
+var ErrRegister = httperror.InternalServerError("cannot register user")
+var ErrRegisterMerchant = httperror.InternalServerError("cannot register merchant")
+var ErrRegisterMerchantAccount = httperror.InternalServerError("cannot register merchant account")
+
+var ErrRoleNotFound = httperror.InternalServerError("cannot find role")
+var ErrUserDetailNotFound = httperror.InternalServerError("cannot find user detail")
+var ErrFailedToGenerateAccessToken = httperror.InternalServerError("cannot generate access token")
+var ErrFailedToGenerateRefreshToken = httperror.InternalServerError("cannot generate refresh token")
+var ErrFailedToRetrieveUserRole = httperror.InternalServerError("cannot retrieve user role")
+var ErrFullnameWrongFormat = httperror.BadRequestError("fullname should be alphanumeric", "DATA_NOT_VALID")
+var ErrPhoneWrongFormat = httperror.BadRequestError("phone should only contain numbers", "DATA_NOT_VALID")
+var ErrPhoneAlreadyExist = httperror.BadRequestError("phone already exists", "DATA_NOT_VALID")
+
+var ErrLoginInvalidInput = httperror.BadRequestError("email and password are required and must be correct", "DATA_NOT_VALID")
+
+var ErrSomethingWrongWithBearerToken = httperror.BadRequestError("something wrong with bearer token", "DATA_NOT_VALID")
+
+var ErrUserFavoriteProductQueryDeficient = httperror.BadRequestError("cannot get favorite products, query param is deficient", "DATA_NOT_VALID")
+var ErrUserNotFound = httperror.InternalServerError("cannot find user")
+var ErrUpdateProfileInvalidInput = httperror.BadRequestError("email are required and must be correct", "DATA_NOT_VALID")
+var ErrUpdateProfileDuplicateEmailBlackList = httperror.BadRequestError("email already exists on blacklist", "DATA_NOT_VALID")
+var ErrUpdateProfileDetailInvalidInput = httperror.BadRequestError("Fullname, Phone, Gender, BirthDate, ProfilePicture are required and must be correct", "DATA_NOT_VALID")
+var ErrInvalidFullname = httperror.BadRequestError("fullname should be alphanumeric", "DATA_NOT_VALID")
+var ErrInvalidPhone = httperror.BadRequestError("phone should only contain numbers", "DATA_NOT_VALID")
+var ErrDuplicatePhone = httperror.BadRequestError("phone already exists", "DATA_NOT_VALID")
+
+var ErrUserEmailBlacklistAlreadyExist = httperror.BadRequestError("email already exists", "DATA_NOT_VALID")
+var ErrUserEmailBlacklistUserNotFound = httperror.InternalServerError("cannot find user")
+var ErrAddUserEmailBlacklistInternalError = httperror.InternalServerError("cannot add email to blacklist")
+var ErrCheckEmailBlacklistInternalError = httperror.InternalServerError("cannot check email blacklist")
+var ErrCheckEmailBlacklistEmailBlacklisted = httperror.BadRequestError("email already used by other user", "DATA_NOT_VALID")
+
+var ErrAddAddressInvalidInput = httperror.BadRequestError("province, city, district, subdistrict, name, phone, label are required and must be correct", "DATA_NOT_VALID")
+var ErrUserAddressNotFound = httperror.InternalServerError("cannot find user address, maybe this address doesn't belong to this user")
+var ErrAddUserAddress = httperror.InternalServerError("failed to add user address")
+var ErrInvalidProvince = httperror.BadRequestError("province is must be correct", "DATA_NOT_VALID")
+var ErrInvalidCity = httperror.BadRequestError("city is must be correct", "DATA_NOT_VALID")
+var ErrInvalidDistrict = httperror.BadRequestError("district is must be correct", "DATA_NOT_VALID")
+var ErrInvalidSubdistrict = httperror.BadRequestError("subdistrict is must be correct", "DATA_NOT_VALID")
+var ErrAddUserAddressInvalidPhone = httperror.BadRequestError("phone should only contain numbers", "DATA_NOT_VALID")
+var ErrInvalidCredentialUserAddress = httperror.BadRequestError("user address is not belong to this user", "DATA_NOT_VALID")
+var ErrUpdateUserAddress = httperror.InternalServerError("failed to update user address")
+var ErrDeleteUserAddress = httperror.InternalServerError("failed to delete user address")
+var ErrDeleteDefaultUserAddress = httperror.BadRequestError("cannot delete default address", "DATA_NOT_VALID")
+var ErrDeleteDefaultMerchantAddress = httperror.BadRequestError("cannot delete address that assigned to merchant address", "DATA_NOT_VALID")
+var ErrUpdateMerchantCity = httperror.InternalServerError("failed to update merchant city")
+var ErrAddEmailBlacklistInternalError = httperror.InternalServerError("cannot add email to blacklist")
+var ErrUpdateErrorInternalError = httperror.InternalServerError("cannot update user")
+var ErrUpdateInternalError = httperror.InternalServerError("cannot update user")
+var ErrInvalidAddressID = httperror.BadRequestError("address id is not valid", "DATA_NOT_VALID")
+
+var ErrInvalidPhoneLength = httperror.BadRequestError("phone length must be between 10 and 13", "DATA_NOT_VALID")
+var ErrInvalidPhoneFalsePrefix = httperror.BadRequestError("phone prefix must be 08 or 62", "DATA_NOT_VALID")
+var ErrPinInternalError = httperror.InternalServerError("cannot process pin info")
+var ErrWalletBlocked = httperror.BadRequestError("wallet is blocked", "DATA_NOT_VALID")
